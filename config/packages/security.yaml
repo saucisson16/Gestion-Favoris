@@ -1,7 +1,18 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+      Symfony\COmporent\Security\Core\User\User:
+        algorithm: bcrypt
+        cost: 12
+
     providers:
-        in_memory: { memory: ~ }
+        in_memory:
+            memory:
+                users:
+                    Saucisson16:
+                        password: $2y$12$.1cUNiZ6Y3kzj0.I8lS16el0xtrWmF6NDrkw./9bt5SC.vZVpg14
+                        roles: 'ROLE_ADMIN'
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
