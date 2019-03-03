@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <iframe src="https://www.deepl.com/translator" width="100%" height="500"></iframe>
+    {% for link in links %}
+        <ul>
+            <li>
+                <a href="{{ link.url }}">{{ link.url }}</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
