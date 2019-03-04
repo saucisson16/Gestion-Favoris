@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LinkRepository")
@@ -25,12 +26,6 @@ class Link
      * @ORM\Column(type="datetime")
      */
     private $date;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="links")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
 
     public function getId()
     {
@@ -59,29 +54,5 @@ class Link
         $this->date = $date;
 
         return $this;
-    }
-
-    /**
-     * Set category
-     *
-     * @param Category $category
-     *
-     * @return Link
-     */
-    public function setCategory(Category $category)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return Category
-     */
-    public function getCategory()
-    {
-        return $this->category;
     }
 }
