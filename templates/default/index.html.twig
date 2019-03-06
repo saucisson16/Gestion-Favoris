@@ -10,4 +10,19 @@
             </li>
         </ul>
     {% endfor %}
+
+    <a href="{{path('create_category')}}">Créer</a>
+
+    {% if categories|length != 0 %}
+        {% for category in categories %}
+            <div style="width: 200px; height: 100px; border: 1px solid black; text-align: center">
+                <p>{{ category.name }}</p>
+                <a href="{{path('edit_category', {'id': category.id }) }}">Editer</a>
+                <a href="{{path('category_delete', {'id': category.id }) }}" >Supprimer</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Aucune catégorie n'existe pour l'instant, créez en une !</p>
+    {% endif %}
+
 {% endblock %}

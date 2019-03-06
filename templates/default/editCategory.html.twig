@@ -1,0 +1,13 @@
+<div>
+    {{ form_start(updateCategoryForm) }}
+    {{ form_errors(updateCategoryForm) }}
+
+    <div class="input">
+        {{ form_row(updateCategoryForm.name) }}<br/>
+    </div>
+
+    <div>
+        {{ form_widget(updateCategoryForm.save, {'label': 'Modifier'}) }}<br/>
+    </div>
+    {{ form_end(updateCategoryForm) }}
+</div>
