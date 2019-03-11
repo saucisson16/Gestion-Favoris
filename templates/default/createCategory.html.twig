@@ -1,19 +1,23 @@
-<div id="flashMsgManageCategories"></div>
-    <div id="choiceCategory">
-        {{ form_start(createCategoryForm) }}
-        {{ form_errors(createCategoryForm) }}
+{% extends 'base.html.twig' %}
 
-        {{ form_errors(createCategoryForm.name) }}
-        <div class="input">
-            {{ form_row(createCategoryForm.name) }}<br/>
-        </div>
-        <div>
-            <div class="create">
-                <div>
-                    {{ form_widget(createCategoryForm.save, {'label': 'Créer', 'attr': { 'class': 'btn-user-create-category', 'url': path('create_category')}}) }}<br/>
-                    {{ form_end(createCategoryForm) }}
+{% block body %}
+    <div id="flashMsgManageCategories"></div>
+        <div id="choiceCategory">
+            {{ form_start(createCategoryForm) }}
+            {{ form_errors(createCategoryForm) }}
+
+            {{ form_errors(createCategoryForm.name) }}
+            <div class="input">
+                {{ form_row(createCategoryForm.name) }}<br/>
+            </div>
+            <div>
+                <div class="create">
+                    <div>
+                        {{ form_widget(createCategoryForm.save, {'label': 'Créer', 'attr': { 'class': 'btn-user-create-category', 'url': path('create_category')}}) }}<br/>
+                        {{ form_end(createCategoryForm) }}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<br/>
+    <br/>
+{% endblock %}
